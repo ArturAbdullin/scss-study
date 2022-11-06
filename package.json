@@ -1,0 +1,16 @@
+{
+  "name": "scss-study",
+  "version": "1.0.0",
+  "description": "scss and sass study repo using webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "webpack"
+  ],
+  "author": "Artur Abdullin",
+  "license": "ISC"
+}
