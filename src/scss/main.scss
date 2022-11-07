@@ -21,6 +21,15 @@
   border: 1px solid #333;
 }
 
+@mixin fancy-links {
+  a {
+    font-style: italic;
+    text-decoration: none;
+  }
+}
+
+@include fancy-links;
+
 body {
   font-family: variables.$text-font;
   color: variables.$text-color;
