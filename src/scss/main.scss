@@ -33,7 +33,8 @@ a {
 }
 
 #header {
-  @include mixins.box;
+  @include mixins.box($border: 1px solid #999, $radius: 12px); // use explicit names
+  @include mixins.box-shadow(2px 0px 4px #999, 1px 1px 6px variables.$secondary-color);
   height: variables.$header-height;
   background-color: variables.$theme-color;
   #main-menu {
