@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -8,6 +9,15 @@ module.exports = {
     about: "./src/about.ts",
     contact: "./src/contact.ts",
     portfolio: "./src/portfolio.ts",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s(a|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        include: [path.resolve(__dirname, "src/scss")],
+      },
+    ],
   },
   output: {
     path: path.resolve(__dirname, "public"),
@@ -36,6 +46,9 @@ module.exports = {
       title: "Get in Touch - My Awesome Site",
       filename: "contact.html",
       template: "src/contact.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "css/main.css",
     }),
   ],
 };
