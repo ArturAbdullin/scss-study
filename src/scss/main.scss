@@ -1,0 +1,52 @@
+@use "variables";
+
+body {
+  font-family: variables.$text-font;
+  color: variables.$text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: variables.$headline-font;
+}
+
+p {
+  font-family: variables.$text-font;
+}
+
+a {
+  color: variables.$link-color;
+}
+
+#header {
+  height: variables.$header-height;
+  background-color: variables.$theme-color;
+  #main-menu {
+    li {
+      display: inline;
+    }
+    a {
+      color: variables.$menu-item-color;
+    }
+  }
+
+  #logo {
+  }
+}
+
+#main {
+  width: variables.$content-width;
+  margin-inline: auto;
+  #content {
+  }
+
+  #sidebar {
+  }
+}
+
+#footer {
+  height: variables.$footer-height;
+  background-color: variables.$ternary-color;
+}
