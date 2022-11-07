@@ -1,34 +1,7 @@
 @use "variables";
+@use "mixins";
 
-@mixin warning {
-  background-color: orange;
-  color: white;
-}
-
-@mixin large-text {
-  font: {
-    size: 22px;
-    weight: bold;
-  }
-}
-
-@mixin rounded {
-  border-radius: 6px;
-}
-
-@mixin box {
-  @include rounded;
-  border: 1px solid #333;
-}
-
-@mixin fancy-links {
-  a {
-    font-style: italic;
-    text-decoration: none;
-  }
-}
-
-@include fancy-links;
+@include mixins.fancy-links;
 
 body {
   font-family: variables.$text-font;
@@ -43,7 +16,7 @@ h4 {
 }
 
 h2 {
-  @include large-text;
+  @include mixins.large-text;
 }
 
 p {
@@ -55,12 +28,12 @@ a {
 }
 
 .warning-button {
-  @include warning;
+  @include mixins.warning;
   padding: 8px 12px;
 }
 
 #header {
-  @include box;
+  @include mixins.box;
   height: variables.$header-height;
   background-color: variables.$theme-color;
   #main-menu {
