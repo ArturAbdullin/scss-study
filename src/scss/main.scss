@@ -32,6 +32,12 @@ a {
   padding: 8px 12px;
 }
 
+@include mixins.apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
+
 #header {
   @include mixins.box($border: 1px solid #999, $radius: 12px); // use explicit names
   @include mixins.box-shadow(2px 0px 4px #999, 1px 1px 6px variables.$secondary-color);
