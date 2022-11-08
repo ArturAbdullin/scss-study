@@ -9,6 +9,9 @@
 body {
   font-family: variables.$text-font;
   color: variables.$text-color;
+  @media (max-width: variables.$content-width) {
+    font-size: 125%;
+  }
 }
 
 h1,
@@ -67,6 +70,10 @@ a {
 
 #main {
   width: variables.$content-width;
+  @media (max-width: 960px) {
+    width: auto;
+    max-width: variables.$content-width;
+  }
   margin-inline: auto;
   #content {
   }
