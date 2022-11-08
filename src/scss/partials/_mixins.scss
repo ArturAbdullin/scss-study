@@ -1,3 +1,9 @@
+
+@mixin google-font($font) {
+  $font: unquote($font);
+  @import url(https://fonts.googleapis.com/css?family=#{$font}); // css string interpolation #{variable}
+}
+
 @mixin warning {
   background-color: orange;
   color: white;
