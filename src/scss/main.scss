@@ -1,5 +1,5 @@
-@use "variables";
-@use "mixins";
+@use "partials/variables";
+@use "partials/mixins";
 
 @include mixins.fancy-links;
 
