@@ -2,11 +2,11 @@
   @return $left + $right;
 }
 
-@function em($pixels, $context: 16px) {
+@function to-em($pixels, $context: 16px) {
   @return calc($pixels / $context * 1em);
 }
 
-@function col-width($columns: 12, $page-width: 100%, $gap: 1%) {
+@function get-col-width($columns: 12, $page-width: 100%, $gap: 1%) {
   @return calc(($page-width - $gap * ($columns - 1)) / $columns);
 }
 

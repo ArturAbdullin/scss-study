@@ -1,4 +1,4 @@
-@use "functions" as f;
+@use "functions" as *;
 
 // === THEME ===
 // Allowed valus: Dark, Light, Default
@@ -42,6 +42,6 @@ $headline-font: "Titillium Web", Georgia, serif;
 $content-width: 960px;
 $header-height: 60px;
 $footer-height: 90px;
-$col: f.col-width(
+$col: get-col-width(
   $columns: 8,
 );
