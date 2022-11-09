@@ -56,6 +56,12 @@ a {
   font-style: italic;
 }
 
+.sub-title {
+  @extend %highlight;
+  @extend .foo !optional; // extend if .foo class selecor exists
+  font-size: em(20px);
+}
+
 .warning-button {
   @include warning;
   padding: 8px 12px;
