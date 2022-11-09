@@ -3,6 +3,11 @@
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 @include fancy-links;
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
 
 body {
   font-family: $text-font;
@@ -40,12 +45,6 @@ a {
 .warning-button {
   @include warning;
   padding: 8px 12px;
-}
-
-@include apply-to-ie-6 {
-  body {
-    font-size: 125%;
-  }
 }
 
 #header {
