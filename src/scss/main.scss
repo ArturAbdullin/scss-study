@@ -52,6 +52,10 @@ a {
   }
 }
 
+%highlight { // extend-only selector; will not compile to a class selector; is used to be extended from
+  font-style: italic;
+}
+
 .warning-button {
   @include warning;
   padding: 8px 12px;
