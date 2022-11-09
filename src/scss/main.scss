@@ -1,5 +1,6 @@
-@use "partials/variables";
+@use "partials/variables" as vars;
 @use "partials/mixins";
+@use "partials/functions" as f;
 
 @include mixins.google-font("Alegreya+Sans");
 @include mixins.google-font("Titillium+Web");
@@ -7,8 +8,10 @@
 @include mixins.fancy-links;
 
 body {
-  font-family: variables.$text-font;
-  color: variables.$text-color;
+  font-family: vars.$text-font;
+  color: vars.$text-color;
+  font-size: f.em(18px);
+
   @include mixins.large-screens {
     font-size: 125%;
   }
@@ -18,7 +21,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: variables.$headline-font;
+  font-family: vars.$headline-font;
 }
 
 h2 {
@@ -26,14 +29,14 @@ h2 {
 }
 
 p {
-  font-family: variables.$text-font;
+  font-family: vars.$text-font;
 }
 
 a {
-  color: variables.$link-color;
+  color: vars.$link-color;
 
   &:hover {
-    color: darken($color: variables.$link-color, $amount: 15%);
+    color: darken($color: vars.$link-color, $amount: 15%);
   }
 }
 
@@ -55,16 +58,16 @@ a {
   ); // use explicit names
   @include mixins.box-shadow(
     2px 0px 4px #999,
-    1px 1px 6px variables.$secondary-color
+    1px 1px 6px vars.$secondary-color
   );
-  height: variables.$header-height;
-  background-color: variables.$theme-color;
+  height: vars.$header-height;
+  background-color: vars.$theme-color;
   #main-menu {
     li {
       display: inline;
     }
     a {
-      color: variables.$menu-item-color;
+      color: vars.$menu-item-color;
       padding: 6px 8px;
       border-bottom: 1px solid transparentize($color: #fefefe, $amount: 1);
       transition: border-bottom 0.5s;
@@ -81,20 +84,35 @@ a {
 }
 
 #main {
-  width: variables.$content-width;
+  width: vars.$content-width;
   @include mixins.large-screens {
     width: auto;
-    max-width: variables.$content-width;
+    max-width: vars.$content-width;
   }
   margin-inline: auto;
   #content {
+    float: left;
+    width: 6 * vars.$col;
   }
 
   #sidebar {
+    float: right;
+    width: 2 * vars.$col;
+
+    li {
+      list-style-type: none;
+      padding: f.em(16px) f.em(20px);
+      border-bottom: 1px dashed #999;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
   }
 }
 
 #footer {
-  height: variables.$footer-height;
-  background-color: variables.$ternary-color;
+  clear: both;
+  height: vars.$footer-height;
+  background-color: vars.$ternary-color;
 }
