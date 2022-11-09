@@ -1,5 +1,11 @@
 @use "abstracts" as *;
 
+@for $i from 1 through 6 {
+  .col-#{$i} {
+    width: $i * 2em;
+  }
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 @include fancy-links;
