@@ -6,6 +6,14 @@
   }
 }
 
+$speakers: bob-banker, patty-plume, sandra-smith;
+@each $speaker in $speakers {
+  .#{$speaker}-profile {
+    content: "#{$speaker}"; // just to compile; the better use case is with the background-image: url('..#{$speaker}.png') property
+    // background-image: url('/img/#{$speaker}.png'); // will not compile as the src doesn't contain images
+  }
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 @include fancy-links;
