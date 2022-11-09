@@ -1,18 +1,15 @@
-@use "partials/variables" as vars;
-@use "partials/mixins";
-@use "partials/functions" as f;
+@use "abstracts" as *;
 
-@include mixins.google-font("Alegreya+Sans");
-@include mixins.google-font("Titillium+Web");
-
-@include mixins.fancy-links;
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+@include fancy-links;
 
 body {
-  font-family: vars.$text-font;
-  color: vars.$text-color;
-  font-size: f.em(18px);
+  font-family: $text-font;
+  color: $text-color;
+  font-size: em(18px);
 
-  @include mixins.large-screens {
+  @include large-screens {
     font-size: 125%;
   }
 }
@@ -21,53 +18,53 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: vars.$headline-font;
+  font-family: $headline-font;
 }
 
 h2 {
-  @include mixins.large-text;
+  @include large-text;
 }
 
 p {
-  font-family: vars.$text-font;
+  font-family: $text-font;
 }
 
 a {
-  color: vars.$link-color;
+  color: $link-color;
 
   &:hover {
-    color: darken($color: vars.$link-color, $amount: 15%);
+    color: darken($color: $link-color, $amount: 15%);
   }
 }
 
 .warning-button {
-  @include mixins.warning;
+  @include warning;
   padding: 8px 12px;
 }
 
-@include mixins.apply-to-ie-6 {
+@include apply-to-ie-6 {
   body {
     font-size: 125%;
   }
 }
 
 #header {
-  @include mixins.box(
+  @include box(
     $border: 1px solid #999,
     $radius: 12px
   ); // use explicit names
-  @include mixins.box-shadow(
+  @include box-shadow(
     2px 0px 4px #999,
-    1px 1px 6px vars.$secondary-color
+    1px 1px 6px $secondary-color
   );
-  height: vars.$header-height;
-  background-color: vars.$theme-color;
+  height: $header-height;
+  background-color: $theme-color;
   #main-menu {
     li {
       display: inline;
     }
     a {
-      color: vars.$menu-item-color;
+      color: $menu-item-color;
       padding: 6px 8px;
       border-bottom: 1px solid transparentize($color: #fefefe, $amount: 1);
       transition: border-bottom 0.5s;
@@ -84,24 +81,24 @@ a {
 }
 
 #main {
-  width: vars.$content-width;
-  @include mixins.large-screens {
+  width: $content-width;
+  @include large-screens {
     width: auto;
-    max-width: vars.$content-width;
+    max-width: $content-width;
   }
   margin-inline: auto;
   #content {
     float: left;
-    width: 6 * vars.$col;
+    width: 6 * $col;
   }
 
   #sidebar {
     float: right;
-    width: 2 * vars.$col;
+    width: 2 * $col;
 
     li {
       list-style-type: none;
-      padding: f.em(16px) f.em(20px);
+      padding: em(16px) em(20px);
       border-bottom: 1px dashed #999;
 
       &:hover {
@@ -113,6 +110,6 @@ a {
 
 #footer {
   clear: both;
-  height: vars.$footer-height;
-  background-color: vars.$ternary-color;
+  height: $footer-height;
+  background-color: $ternary-color;
 }
