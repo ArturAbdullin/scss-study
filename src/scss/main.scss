@@ -14,6 +14,14 @@ $speakers: bob-banker, patty-plume, sandra-smith;
   }
 }
 
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px); // map data structure in scss
+
+@each $name, $size in $font-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 @include fancy-links;
